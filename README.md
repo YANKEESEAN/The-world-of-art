@@ -2,7 +2,8 @@
 
 一个集欣赏、学习、探索与创作为一体的交互式艺术主题网站。
 
-![Static Badge](https://img.shields.io/badge/Status-Development-yellow) ![Static Badge](https://img.shields.io/badge/HTML-CSS-JS-orange)
+![Static Badge](https://img.shields.io/badge/Status-Development-yellow) 
+![Static Badge](https://img.shields.io/badge/HTML-CSS-JS-orange)
 
 ## 🌟 项目简介
 
@@ -30,10 +31,10 @@
 │   └── 梵高&贝多芬.html      # 三级页面：可能是展现生命的详情页
 │
 └── assets/                   # 静态资源目录
-    ├── images/               # 图片资源
+    ├── img/                  # 图片资源
         ├── 03.gif            # 动图背景或效果
         ├── 背景.jpg          # 网页背景图
-        ├── 巴洛克时期.jpg    # 艺术史图片
+        ├── 巴洛克时期.jpg     # 艺术史图片
         ├── 贝多芬.png        # 人物头像/介绍图
         ├── 星夜.jpg          # 艺术作品
         ├── 苏轼.jpg          # 人物头像/介绍图
@@ -71,7 +72,7 @@
   - 使用 **JavaScript** 实现页面间导航、内容切换和画板功能。
   - 使用 **CSS** 实现布局、响应式设计和基本动画效果。
 - **资源管理**:
-  - 所有图片资源均存放于 `/img/` 目录下，并按主题命名，便于管理和调用。
+  - 所有图片资源均存放于 `assets/img/` 目录下，并按主题命名，便于管理和调用。
 
 ## 🎯 如何使用
 
