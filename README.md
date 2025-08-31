@@ -3,7 +3,9 @@
 一个集欣赏、学习、探索与创作为一体的交互式艺术主题网站。
 
 ![Static Badge](https://img.shields.io/badge/Status-Development-yellow) 
-![Static Badge](https://img.shields.io/badge/HTML-CSS-JS-orange)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 ## 🌟 项目简介
 
