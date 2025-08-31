@@ -1,3 +1,96 @@
+# The World of Art
+
+An interactive art-themed website that integrates appreciation, learning, exploration, and creation.
+
+![Static Badge](https://img.shields.io/badge/Status-Development-yellow)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+## 🌟 Project Introduction
+
+"The World of Art" is an art-themed website built with multiple HTML pages. It guides users through rich graphic content and interactive design to learn about art history, contemplate the meaning of art, appreciate masterpieces, and ultimately engage in personal creation. The website covers diverse content ranging from macro art history to micro personal expression.
+
+## 📁 Project File Structure
+
+```
+Project Root/
+│
+├── *.html                    # Main and Secondary Pages
+│   ├── 首页.html             # Homepage (Entry Point)
+│   ├── 世界艺术史.html       # Secondary Page: Art History Overview
+│   ├── 中国艺术史.html       # Secondary Page: Chinese Art History (switchable from World Art History)
+│   ├── 西方艺术史.html       # Secondary Page: Western Art History (switchable from World Art History)
+│   ├── 艺术的意义.html       # Secondary Page: The Meaning of Art (with bubble navigation)
+│   ├── 艺术鉴赏.html         # Secondary Page: Art Website Navigation
+│   ├── 个人艺术创作.html     # Secondary Page: Online Canvas
+│   └── ...
+│
+├── 三级页面/                 # Subpages引出的 from "The Meaning of Art" page
+│   ├── 丰富生活.html         # Tertiary Page: How Art Enriches Life
+│   ├── 映射灵魂.html         # Tertiary Page: How Art Mirrors the Soul (e.g., Su Shi, Tagore)
+│   ├── 展现生命.html         # Tertiary Page: How Art Reveals Life (Van Gogh, Beethoven)
+│   └── 梵高&贝多芬.html      # Tertiary Page: Likely a detail page for "Revealing Life"
+│
+└── assets/                   # Static Resources Directory
+    ├── img/                  # Image Resources
+        ├── 03.gif            # Animated background or effects
+        ├── 背景.jpg          # Website background image
+        ├── 巴洛克时期.jpg     # Art history images
+        ├── 贝多芬.png        # Portrait/Introduction images
+        ├── 星夜.jpg          # Artwork images
+        ├── 苏轼.jpg          # Portrait/Introduction images
+        └── ...               # Other numerous art-related images
+
+```
+
+## 🚀 Page Function Overview
+
+### 1. Homepage (`首页.html`)
+- **Entry page**, containing links to all main sections.
+
+### 2. Art History Section
+- **`世界艺术史.html`**: Art history overview, serving as the entry point for Chinese and Western art history.
+- **`中国艺术史.html`**: Showcases artistic development from the Pre-Qin period, Qin & Han, Wei, Jin, Southern and Northern Dynasties, Tang Dynasty, Song Dynasty, Yuan Dynasty, Ming Dynasty, to the Qing Dynasty.
+- **`西方艺术史.html`**: Showcases artistic development from the Medieval period, Renaissance, Baroque, Classicism, Romanticism, Impressionism, Modernism, to Postmodernism.
+
+### 3. The Meaning of Art Section (`艺术的意义.html`)
+- **Main page**, containing links or interactive elements leading to three sub-themes.
+- **Subpages**:
+  - **`丰富生活.html`**: Demonstrates the application of art in daily life through images (e.g., dance, photography, film).
+  - **`映射灵魂.html`**: In-depth introduction to how artists (Su Shi, Tagore, Mozart) express their inner world through their work.
+  - **`展现生命.html`** & **`梵高&贝多芬.html`**: Tells how Van Gogh (Starry Night, Almond Blossoms, Self-Portraits, Cafe Terrace) and Beethoven used art to reveal the power of life.
+
+### 4. Art Appreciation (`艺术鉴赏.html`)
+- Provides links to external art resources or internal appreciation content.
+
+### 5. Personal Art Creation (`个人艺术创作.html`)
+- Contains a Canvas-based drawing area where users can create their own artwork.
+
+## 🛠️ Technical Implementation
+
+- **Core Languages**: `HTML`, `CSS`, `JavaScript`
+- **Interactive Features**:
+  - Uses **JavaScript** for inter-page navigation, content switching, and canvas functionality.
+  - Uses **CSS** for layout, responsive design, and basic animation effects.
+- **Resource Management**:
+  - All image resources are stored in the `assets/img/` directory and named thematically for easy management and reference.
+
+## 🎯 How to Use
+
+1.  Open the `首页.html` file in a web browser.
+2.  Navigate to different art sections by clicking navigation links or buttons on the pages.
+3.  Use the provided tools to draw on the canvas in the "Personal Art Creation" page.
+4.  Browse the rich graphic content on various art history and meaning of art pages.
+
+## ✨ Design Features
+
+- **Content-Driven**: Focuses on high-quality art images and substantial textual content.
+- **Clear Structure**: Easy-to-navigate page division allows users to effortlessly find content of interest.
+- **Traditional Multi-Page Design**: Independent pages for each theme facilitate content organization and focused presentation.
+
+---
+
 # 艺术的世界 | The World of Art
 
 一个集欣赏、学习、探索与创作为一体的交互式艺术主题网站。
@@ -92,4 +185,4 @@
 
 ---
 
-这个结构清晰地反映了您的项目现状，是一个内容丰富、结构清晰的传统网站。
+
