@@ -11,6 +11,27 @@ An interactive art-themed website that integrates appreciation, learning, explor
 
 "The World of Art" is an art-themed website built with multiple HTML pages. It guides users through rich graphic content and interactive design to learn about art history, contemplate the meaning of art, appreciate masterpieces, and ultimately engage in personal creation. The website covers diverse content ranging from macro art history to micro personal expression.
 
+## 🌐 Live Demo
+
+The website is deployed and accessible via GitHub Pages:
+
+🔗 **[https://yankeesean.github.io/The-world-of-art/](https://yankeesean.github.io/The-world-of-art/)**
+
+-   **[首页 (Homepage)](https://yankeesean.github.io/The-world-of-art/首页.html)**
+-   **[世界艺术史 (Art History Overview)](https://yankeesean.github.io/The-world-of-art/世界艺术史.html)**
+-   **[中国艺术史 (Chinese Art History)](https://yankeesean.github.io/The-world-of-art/中国艺术史.html)**
+-   **[西方艺术史 (Western Art History)](https://yankeesean.github.io/The-world-of-art/西方艺术史.html)**
+-   **[艺术的意义 (The Meaning of Art)](https://yankeesean.github.io/The-world-of-art/艺术的意义.html)**
+-   **[艺术鉴赏 (Art Appreciation)](https://yankeesean.github.io/The-world-of-art/艺术鉴赏.html)**
+-   **[个人艺术创作 (Personal Creation)](https://yankeesean.github.io/The-world-of-art/个人艺术创作.html)**
+-   **[丰富生活 (Art Enriches Life)](https://yankeesean.github.io/The-world-of-art/丰富生活.html)**
+-   **[映射灵魂 (Art Mirrors Soul)](https://yankeesean.github.io/The-world-of-art/映射灵魂.html)**
+-   **[展现生命 (Art Reveals Life)](https://yankeesean.github.io/The-world-of-art/展现生命.html)**
+-   **[梵高&贝多芬 (Van Gogh & Beethoven)](https://yankeesean.github.io/The-world-of-art/梵高&贝多芬.html)**
+
+Visit the link above to experience the live version of the website.
+
+
 ## 📁 Project File Structure
 
 ```
@@ -103,6 +124,28 @@ Project Root/
 ## 🌟 项目简介
 
 “艺术的世界”是一个通过多个HTML页面构建的艺术主题网站。它通过丰富的图文内容和初步的交互设计，引导用户了解艺术史、思考艺术意义、鉴赏名家作品，并最终进行个人创作。网站涵盖了从宏观艺术史到微观个人表达的多元内容。
+
+## 🌐 在线访问
+
+网站已通过 GitHub Pages 部署，可以在此访问：
+
+🔗 **[https://yankeesean.github.io/The-world-of-art/](https://yankeesean.github.io/The-world-of-art/)**
+
+| 页面名称 | 中文名 | 访问链接 |
+| :--- | :--- | :--- |
+| **Homepage** | **首页** | [https://yankeesean.github.io/The-world-of-art/首页.html](https://yankeesean.github.io/The-world-of-art/首页.html) |
+| **Art History Overview** | **世界艺术史** | [https://yankeesean.github.io/The-world-of-art/世界艺术史.html](https://yankeesean.github.io/The-world-of-art/世界艺术史.html) |
+| **Chinese Art History** | **中国艺术史** | [https://yankeesean.github.io/The-world-of-art/中国艺术史.html](https://yankeesean.github.io/The-world-of-art/中国艺术史.html) |
+| **Western Art History** | **西方艺术史** | [https://yankeesean.github.io/The-world-of-art/西方艺术史.html](https://yankeesean.github.io/The-world-of-art/西方艺术史.html) |
+| **The Meaning of Art** | **艺术的意义** | [https://yankeesean.github.io/The-world-of-art/艺术的意义.html](https://yankeesean.github.io/The-world-of-art/艺术的意义.html) |
+| **Art Appreciation** | **艺术鉴赏** | [https://yankeesean.github.io/The-world-of-art/艺术鉴赏.html](https://yankeesean.github.io/The-world-of-art/艺术鉴赏.html) |
+| **Personal Creation** | **个人艺术创作** | [https://yankeesean.github.io/The-world-of-art/个人艺术创作.html](https://yankeesean.github.io/The-world-of-art/个人艺术创作.html) |
+| **Art Enriches Life** | **丰富生活** | [https://yankeesean.github.io/The-world-of-art/丰富生活.html](https://yankeesean.github.io/The-world-of-art/丰富生活.html) |
+| **Art Mirrors Soul** | **映射灵魂** | [https://yankeesean.github.io/The-world-of-art/映射灵魂.html](https://yankeesean.github.io/The-world-of-art/映射灵魂.html) |
+| **Art Reveals Life** | **展现生命** | [https://yankeesean.github.io/The-world-of-art/展现生命.html](https://yankeesean.github.io/The-world-of-art/展现生命.html) |
+| **Van Gogh & Beethoven** | **梵高&贝多芬** | [https://yankeesean.github.io/The-world-of-art/梵高&贝多芬.html](https://yankeesean.github.io/The-world-of-art/梵高&贝多芬.html) |
+
+点击上方链接即可在线体验网站。
 
 ## 📁 项目文件结构
 
