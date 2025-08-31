@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西方艺术史</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .shell {
+            width: 100%;
+            position: relative;
+            padding: 80px 0;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .shell:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(99, 99, 99, 0.8);
+            content: "";
+        }
+
+        .header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .title {
+            color: #fff;
+            font-size: 46px;
+            font-weight: normal;
+            margin: 0;
+            font-family: '华文中宋';
+        }
+
+        .timeline {
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            flex-direction: column;
+            max-width: 700px;
+            position: relative;
+        }
+
+        .content-title {
+            font-weight: normal;
+            font-size: 35px;
+            margin: -10px 0 0 0;
+            transition: 0.4s;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: #fff;
+            font-family: '华文中宋';
+        }
+
+        .content-desc {
+            margin: 0;
+            font-size: 18px;
+            box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 25px;
+            font-family: '华文中宋';
+        }
+
+        .timeline:before {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+            content: "";
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .item {
+            padding: 40px 0;
+            opacity: 0.3;
+            filter: blur(2px);
+            transition: 0.5s;
+            box-sizing: border-box;
+            width: calc(50% - 40px);
+            display: flex;
+            position: relative;
+            transform: translateY(-80px);
+        }
+
+        .item:before {
+            /* 设置在伪元素before中的内容  */
+            content: attr(data-text);
+            letter-spacing: 3px;
+            width: 100%;
+            position: absolute;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 15px;
+            border-left: 2px solid rgba(255, 255, 255, 0.5);
+            top: 70%;
+            margin-top: -5px;
+            padding-left: 15px;
+            opacity: 0;
+            right: calc(-100% - 56px);
+            font: 900 20px '';
+            letter-spacing: 5px;
+            font-family: '华文中宋';
+        }
+
+        .item:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        .item:nth-child(even):before {
+            right: auto;
+            text-align: right;
+            left: calc(-100% - 56px);
+            padding-left: 0;
+            border-left: none;
+            border-right: 2px solid rgba(255, 255, 255, 0.5);
+            padding-right: 15px;
+        }
+
+        .item--active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+        }
+
+        .item--active:before {
+            top: 50%;
+            transition: 0.3s all 0.2s;
+            opacity: 1;
+        }
+
+        .item--active .content-title {
+            margin: -50px 0 20px 0;
+        }
+
+        .img {
+            max-width: 100%;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            letter-spacing: 5px;
+            margin: 10px 0 0 0;
+            font-weight: normal;
+            font-family: '华文中宋';
+        }
+
+        .footer {
+            padding: 95px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #999;
+            display: inline-block;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .item {
+                align-self: baseline !important;
+                width: 100%;
+                padding: 0 30px 150px 80px;
+            }
+
+            .item:before {
+                left: 10px !important;
+                padding: 0 !important;
+                top: 50px;
+                text-align: center !important;
+                width: 60px;
+                border: none !important;
+            }
+
+            .item:last-child {
+                padding-bottom: 40px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .timeline:before {
+                left: 40px;
+            }
+        }
+    </style>
+    <style>
+        .return-button {
+            background-color: #cbcfcb;
+            color: rgb(16, 29, 89);
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: '华文中宋';
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    </div>
+    <div class="shell" id="shell" style="background-image: url(&quot;./img/01.jpg&quot;);">
+        <div class="header">
+            <h2 class="title">西方艺术史</h2>
+        </div>
+        <div class="timeline">
+
+            <div class="item" data-text="公元前12世纪至公元前4世纪下半叶">
+                <div class="content">
+                    <img class="img" src="img/西方古典主义时期.jpg">
+                    <h2 class=" content-title ">西方古典主义时期</h2>
+                    <p class="content-desc ">
+                        古典主义时期：艺术追求理性和秩序。在古希腊罗马时期，艺术追求完美的比例和对称，强调体现人的理性和自由。在建筑和雕塑领域，体现了对美的追求和对人类自身的赞美
+                    </p>
+                </div>
+            </div>
+
+            <div class="item " data-text="公元5世纪至公元15世纪">
+                <div class="content ">
+                    <img class="img " src="img/中世纪.jpg ">
+                    <h2 class="content-title ">中世纪</h2>
+                    <p class="content-desc ">
+                        中世纪时期艺术，也称为古典主义艺术，以宗教为主题，因此具有明显的宗教性质和特点。其艺术风格具有浓郁的宗教气息、严肃、庄重、神秘和神圣的特征，以盔甲、兽首、十字架等简洁的符号和质朴的线条为表现形式，表现了中世纪基督教信仰的重要地位和影响力。此外，中世纪时期的艺术还具有极强的装饰性和经典主义色彩
+                    </p>
+                </div>
+            </div>
+
+
+
+            <div class="item " data-text="16世纪间">
+                <div class="content ">
+                    <img class="img " src="img/文艺复兴时期.jpg ">
+                    <h2 class="content-title ">文艺复兴时期</h2>
+                    <p class="content-desc ">
+                        文艺复兴时期：以人为本，艺术兴起了新的高峰。在意大利，文艺复兴的艺术家们追求复兴古希腊罗马时期的艺术，提倡人文主义和自由主义思想，这时期的绘画、建筑、雕塑等艺术形式都突破了古典主义时期的束缚。
+                    </p>
+                </div>
+            </div>
+
+
+
+            <div class="item " data-text="17世纪">
+                <div class="content ">
+                    <img class="img " src="img/巴洛克时期.jpg">
+                    <h2 class="content-title ">巴洛克时期</h2>
+                    <p class="content-desc ">
+                        巴洛克时期，艺术风格富丽堂皇。这是一个时期的政治、经济和社会变革时期，艺术家们表现出的情感更加强烈，艺术作品的色彩、线条、造型都比以前更加丰富和复杂，反映了社会对宗教和政治的深刻思考。
+                    </p>
+                </div>
+            </div>
+
+
+
+            <div class="item " data-text="18世纪">
+                <div class="content ">
+                    <img class="img " src="img/启蒙运动.jpg ">
+                    <h2 class="content-title ">启蒙运动</h2>
+                    <p class="content-desc ">
+                        启蒙运动时期：客观、理性和反对封建迷信的思想占据主导地位，艺术也反映了这一时期的精神。然而，启蒙时期也充满了反叛的情绪，在艺术领域，出现了一系列新兴艺术流派和思潮。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item " data-text="18世纪晚期至19世纪的期间">
+                <div class="content ">
+                    <img class="img " src="img/浪漫主义时期.jpg">
+                    <h2 class="content-title ">浪漫主义时期</h2>
+                    <p class="content-desc ">
+                        浪漫主义时期：艺术更侧重情感和个性化。在文学、音乐、绘画等领域，出现了大量浪漫主义艺术家，他们强调感觉和直觉，让人们从理智和逻辑的束缚中解放出来。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item " data-text="20世纪至今">
+                <div class="content ">
+                    <img class="img " src="img/现代主义.jpg ">
+                    <h2 class="content-title ">现代主义时期</h2>
+                    <p class="content-desc ">
+                        现代主义阶段，艺术形式种类更加多样，内容更加丰富。
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="item " data-text="20世纪60年代后期到70年代初期">
+                <div class="content ">
+                    <img class="img " src="img/后现代.jpg ">
+                    <h2 class="content-title ">后现代主义</h2>
+                    <p class="content-desc ">
+                        在这个时期，一系列思想家、艺术家和学者开始对现代主义的理念和价值观提出质疑，并开始探索新的思考方式和表达形式。后现代主义的兴起在不同领域有不同的表现，例如文学、哲学、建筑、艺术等。
+                    </p>
+                </div>
+            </div>
+
+            <a class="button" href="世界艺术史.html">
+                <div class="footer">
+                    <button class="return-button" onclick="goBack()">返回上一页</button>
+
+                    <script>
+                        function goBack() {
+                            window.history.back();
+                        }
+                    </script>
+                </div>
+            </a>
+>
+
+
+
+        </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+        </script>
+        <script>
+            $(document).ready(function () {
+            (function ($) {
+                $.fn.timeline = function () {
+                    var selectors = {
+                        id: $(this),
+                        item: $(this).find(".item"),
+                        activeClass: "item--active",
+                        img: ".img"
+                    };
+                    // 将第一个时间轴项目激活，并设置时间轴背景图片为第一个项目的图片
+                    selectors.item.eq(0).addClass(selectors.activeClass);
+                    selectors.id.css(
+                        "background-image",
+                        "url(" +
+                        selectors.item
+                            .first()
+                            .find(selectors.img)
+                            .attr("src") +
+                        ")"
+                    );
+                    // 获取时间轴项目的总数
+                    var itemLength = selectors.item.length;
+                    // 当页面滚动时，触发滚动事件
+                    $(window).scroll(function () {
+                        var max, min;
+                        // 获取页面滚动的距离
+                        var pos = $(this).scrollTop();
+                        selectors.item.each(function (i) {
+                            // 获取当前时间轴项目的最小和最大高度
+                            min = $(this).offset().top;
+                            max = $(this).height() + $(this).offset().top;
+                            var that = $(this);
+                            // 如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                            // 则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目的图片
+                            if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                                selectors.item.removeClass(selectors.activeClass);
+                                selectors.id.css(
+                                    "background-image",
+                                    "url(" +
+                                    selectors.item
+                                        .last()
+                                        .find(selectors.img)
+                                        .attr("src") +
+                                    ")"
+                                );
+                                selectors.item.last().addClass(selectors.activeClass);
+                            }
+                            // 如果当前滚动位置在当前项目的最小和最大高度之间，
+                            // 则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                            else if (pos <= max - 10 && pos >= min) {
+                                selectors.id.css(
+                                    "background-image",
+                                    "url(" +
+                                    $(this)
+                                        .find(selectors.img)
+                                        .attr("src") +
+                                    ")"
+                                );
+                                selectors.item.removeClass(selectors.activeClass);
+                                $(this).addClass(selectors.activeClass);
+                            }
+                        });
+                    });
+                };
+            })(jQuery)
+            /*
+            最后，我们调用 timeline 插件并传入时间轴的 ID 作为参数。
+            这将启用时间轴插件并为该时间轴绑定滚动事件。
+            */
+            $("#shell").timeline();
+        });
+        </script>
+</body>
+
+</html>

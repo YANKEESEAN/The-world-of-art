@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界艺术史</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .shell {
+            width: 100%;
+            position: relative;
+            padding: 80px 0;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .shell:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(99, 99, 99, 0.8);
+            content: "";
+        }
+
+        .header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .title {
+            color: #fff;
+            font-size: 46px;
+            font-weight: normal;
+            margin: 0;
+            font-family: '华文中宋';
+        }
+
+        .timeline {
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            flex-direction: column;
+            max-width: 700px;
+            position: relative;
+        }
+
+        .content-title {
+            font-weight: normal;
+            font-size: 35px;
+            margin: -10px 0 0 0;
+            transition: 0.4s;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: #fff;
+            font-family: '华文中宋';
+        }
+
+        .content-desc {
+            margin: 0;
+            font-size: 18px;
+            box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 25px;
+            font-family: '华文中宋';
+        }
+
+        .timeline:before {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+            content: "";
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .item {
+            padding: 40px 0;
+            opacity: 0.3;
+            filter: blur(2px);
+            transition: 0.5s;
+            box-sizing: border-box;
+            width: calc(50% - 40px);
+            display: flex;
+            position: relative;
+            transform: translateY(-80px);
+        }
+
+        .item:before {
+            /* 设置在伪元素before中的内容  */
+            content: attr(data-text);
+            letter-spacing: 3px;
+            width: 100%;
+            position: absolute;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 15px;
+            border-left: 2px solid rgba(255, 255, 255, 0.5);
+            top: 70%;
+            margin-top: -5px;
+            padding-left: 15px;
+            opacity: 0;
+            right: calc(-100% - 56px);
+            font: 900 20px '';
+            letter-spacing: 5px;
+            font-family: '华文中宋';
+        }
+
+        .item:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        .item:nth-child(even):before {
+            right: auto;
+            text-align: right;
+            left: calc(-100% - 56px);
+            padding-left: 0;
+            border-left: none;
+            border-right: 2px solid rgba(255, 255, 255, 0.5);
+            padding-right: 15px;
+        }
+
+        .item--active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+        }
+
+        .item--active:before {
+            top: 50%;
+            transition: 0.3s all 0.2s;
+            opacity: 1;
+        }
+
+        .item--active .content-title {
+            margin: -50px 0 20px 0;
+        }
+
+        .img {
+            max-width: 100%;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            letter-spacing: 5px;
+            margin: 10px 0 0 0;
+            font-weight: normal;
+            font-family: '华文中宋';
+        }
+
+        .footer {
+            padding: 95px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #999;
+            display: inline-block;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .item {
+                align-self: baseline !important;
+                width: 100%;
+                padding: 0 30px 150px 80px;
+            }
+
+            .item:before {
+                left: 10px !important;
+                padding: 0 !important;
+                top: 50px;
+                text-align: center !important;
+                width: 60px;
+                border: none !important;
+            }
+
+            .item:last-child {
+                padding-bottom: 40px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .timeline:before {
+                left: 40px;
+            }
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .header {
+            position: relative;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            background-color: #8bb2ca;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-family: '华文中宋';
+        }
+
+        .button:hover {
+            background-color: #ad9754;
+        }
+    </style>
+    <style>
+        .return-button {
+            background-color: #cbcfcb;
+            color: rgb(16, 29, 89);
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: '华文中宋';
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    </div>
+    <div class="shell" id="shell" style="background-image: url(&quot;./img/01.jpg&quot;);">
+        <div class="header">
+            <h2 class="title">世界艺术史</h2>
+            <h3 class="subtitle">贯穿人类的历史</h3>
+            <div class="buttons">
+                <a class="button" href="西方艺术史.html">西方艺术史</a>
+                <a class="button" href="中国艺术史.html">中国艺术史</a>
+            </div>
+        </div>
+
+        <div class="timeline">
+
+            <div class="item" data-text="公元前12世纪至公元前4世纪下半叶">
+                <div class="content">
+                    <img class="img" src="img/西方古典主义时期.jpg">
+                    <h2 class=" content-title ">西方古典主义时期</h2>
+                    <p class="content-desc ">
+                        古典主义时期：艺术追求理性和秩序。在古希腊罗马时期，艺术追求完美的比例和对称，强调体现人的理性和自由。在建筑和雕塑领域，体现了对美的追求和对人类自身的赞美
+                    </p>
+                </div>
+            </div>
+
+            <div class="item item--active" data-text="公元221年前">
+                <div class="content">
+                    <img class="img" src="img/先秦时期.jpg">
+                    <h2 class="content-title">先秦时期</h2>
+                    <p class="content-desc">
+                        此时期中国初步成为一个国家，艺术形式主要表现在青铜器和玉器上，主题描绘了宗族、祭祀、军事、猎物等主题。在文学方面，传说中的《山海经》、《诗经》、《周易》等经典问世。文学上最有名的作品是诗经。
+                    </p>
+                </div>
+            </div>
+
+
+
+            <div class="item " data-text="公元前221至公元220">
+                <div class="content ">
+                    <img class="img " src="img/秦汉时期.png ">
+                    <h2 class="content-title ">秦汉时期</h2>
+                    <p class="content-desc ">
+                        秦汉时期：艺术表现形式主要为石刻、壁画、陶器、青铜器，代表作品有兵马俑、汉画像石等。此时期文学前置的作品是《楚辞》和《离骚》，是对爱情的高度颂扬。
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="item " data-text="220年—589年">
+                <div class="content ">
+                    <img class="img " src="img/魏晋南北朝.jpg ">
+                    <h2 class="content-title ">魏晋南北朝</h2>
+                    <p class="content-desc ">
+                        魏晋南北朝时期：这个时期的艺术表现出了独特的文化品位和思想倾向，以壁画、碑刻、佛像和书画为代表，突出了对个性和表现自由的追求。文学方面，此时期的主要作品是《庄子》和大量的乐府诗。书画方面，代表性作品有王羲之的《兰亭序》、颜真卿的《祭侄文稿》。画家顾恺之，擅长绘制人物画，作品以细腻的线条和精湛的技巧著称。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item " data-text="618年-907年">
+                <div class="content ">
+                    <img class="img " src="img/唐朝.jpg ">
+                    <h2 class="content-title ">唐朝</h2>
+                    <p class="content-desc ">
+                        这一时期被称为中国古代的艺术高峰时期，诗歌、绘画、书法和文学作品均具有高超技艺和丰富内涵。唐诗被誉为“诗人之诗”，具有气势磅礴、深入人心的特点，以浪漫主义诗人李白和现实主义诗人杜甫为代表。书画方面，韩滉的画作和颜真卿的书法成为时代的代表作品，唐代的画家多擅长山水和仕女画。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item " data-text="960年-1279年">
+                <div class="content ">
+                    <img class="img " src="img/宋朝.jpg ">
+                    <h2 class="content-title ">宋朝</h2>
+                    <p class="content-desc ">
+                        这一时期的艺术表现出了精细的美学追求和古典的审美主张，代表了中国文化的清新、内敛、高雅。文学以词为主，豪放派与婉约派共存，豪放派以“苏辛”为代表，创作视野较为广阔，气象恢弘雄放。婉约派以柳永、李清照为代表，音律婉转和谐，语言圆润清丽。绘画注重写实，以其精细、细腻而闻名。以文同的花鸟画和李唐的山水画为代表。
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="item " data-text="公元5世纪至公元15世纪">
+                <div class="content ">
+                    <img class="img " src="img/中世纪.jpg ">
+                    <h2 class="content-title ">中世纪</h2>
+                    <p class="content-desc ">
+                        中世纪时期艺术，也称为古典主义艺术，以宗教为主题，因此具有明显的宗教性质和特点。其艺术风格具有浓郁的宗教气息、严肃、庄重、神秘和神圣的特征，以盔甲、兽首、十字架等简洁的符号和质朴的线条为表现形式，表现了中世纪基督教信仰的重要地位和影响力。此外，中世纪时期的艺术还具有极强的装饰性和经典主义色彩
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="item " data-text="1271年-1368年">
+                <div class="content ">
+                    <img class="img " src="img/元代.jpg ">
+                    <h2 class="content-title ">元代</h2>
+                    <p class="content-desc ">
+                        在这一时期中，中国艺术和文学日趋多元化，由于外来文化的影响和元代统治的开放性，中国传统文化和外来文化产生了交集和融合，从而形成了新的艺术表现形式，如散曲、文学小品和快板被广泛流传，同时也产生了大量的新作品，。大书画家赵孟頫的作品得到了广泛的赞誉。元散曲代表作有郑光祖的《锁麟囊》和关汉卿的《窦娥冤》。
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="item " data-text="16世纪间">
+                <div class="content ">
+                    <img class="img " src="img/文艺复兴时期.jpg ">
+                    <h2 class="content-title ">文艺复兴时期</h2>
+                    <p class="content-desc ">
+                        文艺复兴时期：以人为本，艺术兴起了新的高峰。在意大利，文艺复兴的艺术家们追求复兴古希腊罗马时期的艺术，提倡人文主义和自由主义思想，这时期的绘画、建筑、雕塑等艺术形式都突破了古典主义时期的束缚。
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="item " data-text="1271年-1644年">
+                <div class="content ">
+                    <img class="img " src="img/明代.png ">
+                    <h2 class="content-title ">明代</h2>
+                    <p class="content-desc ">
+                        明代的陶瓷艺术以景德镇瓷器为代表，其精湛的技艺和独特的青花瓷装饰风格成为中国陶瓷史上的重要里程碑。例如明代景德镇的青花瓷《牡丹纹盘》采用了细腻的绘画技巧和丰富的纹饰，展示了明代瓷器的高超工艺和独特美感。明代的文学艺术蓬勃发展，涌现出了诗人杨慎的《临江仙·滚滚长江东逝水》、小说家施耐庵的《水浒传》和戏曲作家汤显祖的《牡丹亭》等经典作品。
+                </div>
+            </div>
+
+
+            <div class="item " data-text="17世纪">
+                <div class="content ">
+                    <img class="img " src="img/巴洛克时期.jpg">
+                    <h2 class="content-title ">巴洛克时期</h2>
+                    <p class="content-desc ">
+                        巴洛克时期，艺术风格富丽堂皇。这是一个时期的政治、经济和社会变革时期，艺术家们表现出的情感更加强烈，艺术作品的色彩、线条、造型都比以前更加丰富和复杂，反映了社会对宗教和政治的深刻思考。
+                    </p>
+                </div>
+            </div>
+
+
+
+            <div class="item " data-text="18世纪">
+                <div class="content ">
+                    <img class="img " src="img/启蒙运动.jpg ">
+                    <h2 class="content-title ">启蒙运动</h2>
+                    <p class="content-desc ">
+                        启蒙运动时期：客观、理性和反对封建迷信的思想占据主导地位，艺术也反映了这一时期的精神。然而，启蒙时期也充满了反叛的情绪，在艺术领域，出现了一系列新兴艺术流派和思潮。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item " data-text="18世纪晚期至19世纪的期间">
+                <div class="content ">
+                    <img class="img " src="img/浪漫主义时期.jpg">
+                    <h2 class="content-title ">浪漫主义时期</h2>
+                    <p class="content-desc ">
+                        浪漫主义时期：艺术更侧重情感和个性化。在文学、音乐、绘画等领域，出现了大量浪漫主义艺术家，他们强调感觉和直觉，让人们从理智和逻辑的束缚中解放出来。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item " data-text="1644年-1912年">
+                <div class="content ">
+                    <img class="img " src="img/清朝.jpg ">
+                    <h2 class="content-title ">清朝</h2>
+                    <p class="content-desc ">
+                        清朝在绘画、书法、陶瓷、戏剧和建筑等领域取得了显著成就。清代的绘画以山水、花鸟和人物画为主；极多的书法作品涌现；陶瓷以景德镇青花瓷和珐琅彩瓷为代表；兴起了京剧等剧种，展示了高度艺术性和表演技巧；建筑以紫禁城为代表，风格庄严典雅
+                    </p>
+                </div>
+            </div>
+
+            <div class="item " data-text="20世纪至今">
+                <div class="content ">
+                    <img class="img " src="img/现代主义.jpg ">
+                    <h2 class="content-title ">现代主义时期</h2>
+                    <p class="content-desc ">
+                        现代主义阶段，艺术形式种类更加多样，内容更加丰富。
+                    </p>
+                </div>
+            </div>
+
+
+
+            <div class="item " data-text="20世纪以来">
+                <div class="content ">
+                    <img class="img " src="img/近现代中国.jpg ">
+                    <h2 class="content-title ">近现代中国</h2>
+                    <p class="content-desc ">
+                        中国近现代艺术和文学的发展经历了多重变革，既有在传统文化基础上的创新和发展，又有对国际文化潮流的融合和发展。这个时期的文学与美术作品，在中国文化历史中占有极其重要的地位。文学上以鲁迅、老舍、余华等人为代表，绘画有于非闇和齐白石。同时中国话剧、戏剧也在飞速发展，代表人物有曹禺、梁实秋等。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item " data-text="20世纪60年代后期到70年代初期">
+                <div class="content ">
+                    <img class="img " src="img/后现代.jpg ">
+                    <h2 class="content-title ">后现代主义</h2>
+                    <p class="content-desc ">
+                        在这个时期，一系列思想家、艺术家和学者开始对现代主义的理念和价值观提出质疑，并开始探索新的思考方式和表达形式。后现代主义的兴起在不同领域有不同的表现，例如文学、哲学、建筑、艺术等。
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <button class="return-button" onclick="goToHome()">返回首页</button>
+
+                <script>
+                    function goToHome() {
+                        window.location.href = "首页.html";
+                    }
+                </script>
+            </div>
+            
+        </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+        </script>
+
+        <script>
+            (function ($) {
+                $.fn.timeline = function () {
+                    var selectors = {
+                        id: $(this),
+                        item: $(this).find(".item"),
+                        activeClass: "item--active",
+                        img: ".img"
+                    };
+                    // 将第一个时间轴项目激活，并设置时间轴背景图片为第一个项目的图片
+                    selectors.item.eq(0).addClass(selectors.activeClass);
+                    selectors.id.css(
+                        "background-image",
+                        "url(" +
+                        selectors.item
+                            .first()
+                            .find(selectors.img)
+                            .attr("src") +
+                        ")"
+                    );
+                    // 获取时间轴项目的总数
+                    var itemLength = selectors.item.length;
+                    // 当页面滚动时，触发滚动事件
+                    $(window).scroll(function () {
+                        var max, min;
+                        // 获取页面滚动的距离
+                        var pos = $(this).scrollTop();
+                        selectors.item.each(function (i) {
+                            // 获取当前时间轴项目的最小和最大高度
+                            min = $(this).offset().top;
+                            max = $(this).height() + $(this).offset().top;
+                            var that = $(this);
+                            // 如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                            // 则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目的图片
+                            if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                                selectors.item.removeClass(selectors.activeClass);
+                                selectors.id.css(
+                                    "background-image",
+                                    "url(" +
+                                    selectors.item
+                                        .last()
+                                        .find(selectors.img)
+                                        .attr("src") +
+                                    ")"
+                                );
+                                selectors.item.last().addClass(selectors.activeClass);
+                            }
+                            // 如果当前滚动位置在当前项目的最小和最大高度之间，
+                            // 则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                            else if (pos <= max - 10 && pos >= min) {
+                                selectors.id.css(
+                                    "background-image",
+                                    "url(" +
+                                    $(this)
+                                        .find(selectors.img)
+                                        .attr("src") +
+                                    ")"
+                                );
+                                selectors.item.removeClass(selectors.activeClass);
+                                $(this).addClass(selectors.activeClass);
+                            }
+                        });
+                    });
+                };
+            })(jQuery)
+            /*
+            最后，我们调用 timeline 插件并传入时间轴的 ID 作为参数。
+            这将启用时间轴插件并为该时间轴绑定滚动事件。
+            */
+            $("#shell").timeline();
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prosperous life</title>
+    <style>
+		
+        .e1 {
+			background-color: rgb(241, 205, 248);
+			color: #000000;
+			padding: 8px;
+			text-decoration: none;
+			box-shadow: #a09f9f 0px 0px 6px;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            font: 20px '华文中宋';
+            color: rgba(123, 133, 84, 0.846);
+            letter-spacing: 0px;
+            cursor: pointer;
+            border-radius: 5px;
+		}
+		.e1:active{
+			background-color: #bdbc9d;
+		}
+
+		.e2 {
+			background-color: rgb(241, 205, 248);
+			color: #000000;
+			padding: 8px;
+			text-decoration: none;
+			box-shadow: #a09f9f 0px 0px 6px;
+            position: absolute;
+            top: 0px;
+            right: 0;
+            font: 20px '华文中宋';
+            color: rgba(123, 133, 84, 0.846);
+            letter-spacing: 0px;
+            cursor: pointer;
+            border-radius: 5px;
+		}
+		.e2:active{
+			background-color: #bdbc9d;
+		}
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(237, 213, 238, 0.985);
+        }
+
+        .shell {
+            width: 80%;
+            height: 600px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            height: 600px;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(60, 11, 60, 0.5);
+            border-radius: 20px;
+            border: 5px solid rgb(249, 228, 236);
+            background-color: rgb(249, 228, 236);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 90%;
+            object-fit: cover;
+            transition: 3s;
+        }
+
+        .box>span {
+            font: 200 45px '仿宋';
+            text-align: center;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 50%;
+        }
+
+        /*设置动态时图片放大的程度.*/
+        .box:hover>img {
+            width: 100%;
+            height: 90%;
+        }
+
+        /*动态之后图片的位置.*/
+    </style>
+    <style>
+        .a {
+            /*丰富生活*/
+            position: absolute;
+            top: 120px;
+            left: 25px;
+            font: 50px '华文中宋';
+            color: rgba(171, 102, 224);
+            text-shadow:
+                0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 30px #fff,
+                0 0 50px #fff,
+                0 0 80px #fff;
+            letter-spacing: -10px;
+            cursor: pointer;
+            /*光标移上去之后变成小手.cc*/
+
+        }
+
+        .b {
+            /*正文*/
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            font: 27px '华文仿宋';
+            color: rgba(123, 133, 84, 0.846);
+            letter-spacing: 0px;
+            cursor: pointer;
+            /*光标移上去之后变成小手.cc*/
+
+        }
+
+        .c {
+            /*正文*/
+            position: absolute;
+            top: 700px;
+            left: 390px;
+            font: 27px '华文仿宋';
+            color: rgba(123, 133, 84, 0.846);
+            letter-spacing: 0px;
+            cursor: pointer;
+            /*光标移上去之后变成小手.cc*/
+        }
+
+        .d {
+            /*提示*/
+            position: absolute;
+            top: 0px;
+            left: 1220px;
+            font: 28px '华文仿宋';
+            color: rgba(98, 118, 231, 0.846);
+            letter-spacing: 0px;
+            cursor: pointer;
+            /*光标移上去之后变成小手.cc*/
+
+        }
+    </style>
+</head>
+
+<body>
+    <a class="e2"
+        href="首页.html" >
+        返回首页</a>
+   
+    <a class="e1"
+    href="艺术的意义.html" >
+    返回上一页</a>
+    
+    <div class="a">
+        <h1>丰<br />富<br />生<br />活<br /></h1>
+    </div>
+    <div class="b">
+        多姿多彩的艺术形式让生活变得更加生动有活力
+    </div>
+    <div class="c">
+        艺术是生命的清泉，润泽着我们干涸的心灵，让生活在它的映衬下变得更加绚丽多彩
+    </div>
+    <div class="shell">
+        <div class="box">
+            <img src="img/摄影.jpg">
+            <span>摄影</span>
+        </div>
+        <div class="box">
+            <img src="img/雕塑.jpg">
+            <span>塑像</span>
+        </div>
+        <div class="box">
+            <img src="img/建筑.jpg">
+            <span>建筑</span>
+        </div>
+        <div class="box">
+            <img src="img/影视.jpg">
+            <span>影视</span>
+        </div>
+        <div class="box">
+            <img src="img/舞蹈.jpg">
+            <span>舞蹈</span>
+        </div>
+    </div>
+</body>
+
+</html>

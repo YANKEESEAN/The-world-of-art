@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>individual creation</title>
+    <style>
+        .e2 {
+			background-color: #a594e9;
+			color: #000000;
+			padding: 10px;
+            height: 20px;
+			text-decoration: none;
+			box-shadow: #666 0px 0px 6px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font: 18px '华文中宋';
+            letter-spacing: 0px;
+            cursor: pointer;
+		}
+		.e2:active{
+			background-color: #bdbc9d;
+		}
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            /* 添加网页背景 */
+            /*background-color: rgb(255, 255, 255);*/
+            background-size: cover;
+            background-image:-webkit-linear-gradient(60deg,rgba(218, 169, 215, 0.637),rgba(128, 174, 235, 0.904));
+            /*min-height:648px;*/
+        }
+        
+        canvas {
+            border: 2px solid #000;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+        
+        .controls {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .title {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-family: "宋体", SimSun, sans-serif;
+            background: linear-gradient(to right, rgb(117, 168, 255), #ff7eb3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">请发挥你的艺术</div>
+    <canvas id="whiteboard" width="1300" height="570"></canvas>
+    <a class="e2" href="首页.html">
+        返回首页</a>
+    <div class="controls">
+        <label for="color">颜色:</label>
+        <input type="color" id="color" value="#000000">
+        <label for="size">大小:</label>
+        <input type="range" id="size" min="1" max="20" value="2">
+        <button id="clearBtn">清屏</button>
+        <button id="saveBtn">保存</button>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('whiteboard');
+        const ctx = canvas.getContext('2d');
+        let drawing = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        canvas.addEventListener('mousedown', (e) => {
+            drawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (drawing) {
+                ctx.beginPath();
+                ctx.moveTo(lastX, lastY);
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.strokeStyle = document.getElementById('color').value;
+                ctx.lineWidth = document.getElementById('size').value;
+                ctx.lineCap = 'round';
+                ctx.stroke();
+                [lastX, lastY] = [e.offsetX, e.offsetY];
+            }
+        });
+
+        canvas.addEventListener('mouseup', () => {
+            drawing = false;
+        });
+
+        canvas.addEventListener('mouseout', () => {
+            drawing = false;
+        });
+
+        document.getElementById('clearBtn').addEventListener('click', () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+
+        document.getElementById('saveBtn').addEventListener('click', () => {
+            var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+            var link = document.createElement('a');
+            link.download = 'whiteboard.png';
+            link.href = image;
+            link.click();
+        });
+    </script>
+</body>
+
+</html>

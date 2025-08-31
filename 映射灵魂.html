@@ -1,0 +1,321 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三个伟人</title>
+    <style>
+        .e1 {
+			background-color: rgb(242, 243, 215);
+			color: #000000;
+			padding: 8px;
+			text-decoration: none;
+			box-shadow: #a09f9f 0px 0px 6px;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            font: 20px '华文中宋';
+            color: rgba(123, 133, 84, 0.846);
+            letter-spacing: 0px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1000;
+		}
+		.e1:active{
+			background-color: #bdbc9d;
+		}
+        /*返回首页*/
+		.e2 {
+			background-color: rgb(205, 213, 248);
+			color: #000000;
+			padding: 8px;
+			text-decoration: none;
+			box-shadow: #a09f9f 0px 0px 6px;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            font: 20px '华文中宋';
+            color: rgba(123, 133, 84, 0.846);
+            letter-spacing: 0px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1000;
+		}
+		.e2:active{
+			background-color: #bdbc9d;
+		}
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: rgb(0, 0, 0);
+        }
+
+        .shell {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .page {
+            transform: translateX(-110%);
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            transition: .5s;
+            background-size: cover;
+        }
+
+        .button {
+            display: block;
+            width: 10%;
+            color: #fff;
+            font-size: 30px;
+            font-family: '华文中宋';
+            border-bottom: #fff solid 4px;
+            text-align: center;
+            position: absolute;
+            top: 0px;
+            bottom: 640px;
+            margin: 25px;
+            left: calc(50% + (var(--i)*18%));
+            z-index: 999;
+            transition: .3s;
+        }
+
+        .page_content {
+            box-sizing: border-box;
+            height: 100%;
+            padding: 20px;
+            color: #FFF;
+            position: absolute;
+            left: 100%;
+            display: none;
+            animation-name: fade;
+            animation-duration: .7s;
+            animation-iteration-count: 1;
+            opacity: 1;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        input {
+            display: none;
+        }
+
+        input:checked+.page {
+            transform: translateX(0px);
+            transition: .4s;
+        }
+
+        input:checked+.page .page_content {
+            width: 100%;
+            display: block;
+        }
+
+        .page:nth-child(3) {
+            background-image: url('img/苏轼.jpg');
+        }
+
+        .page:nth-child(3) .page_content {
+            background-color: rgb(108, 127, 211);
+        }
+
+        .page:nth-child(6) {
+            background-image: url('img/莫扎特.jpg');
+        }
+
+        .page:nth-child(6) .page_content {
+            background-color: rgb(92, 92, 115);
+        }
+
+        .page:nth-child(9) {
+            background-image: url('img/泰戈尔.jpg');
+        }
+
+        .page:nth-child(9) .page_content {
+            background-color: rgb(92, 89, 85);
+        }
+
+        .page h1 {
+            position: absolute;
+            top: 120px;
+            font-size: 70px;
+            font-family: '华文中宋';
+        }
+
+        .page p {
+            position: absolute;
+            top: 200px;
+            font-size: 30px;
+            font-family: '华文中宋';
+            padding: 10px;
+            background-color: rgba(0, 0, 0, .3);
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .page span {
+            position: absolute;
+            top: 310px;
+            font-size: 26px;
+            font-family: '楷体';
+            letter-spacing: 2px;
+            color: rgb(224, 222, 222);
+        }
+
+        label:hover {
+            cursor: pointer;
+            border-bottom: solid 4px rgb(35, 35, 35);
+        }
+
+        .shell1 {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .boxa {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+        }
+
+        .boxa>img {
+            width: 200%;
+            height: 75%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .boxa>span {
+            font: 200 45px '优设标题黑';
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .boxa:hover {
+            flex-basis: 40%;
+        }
+
+        .boxa:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tital {
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            font: 120px '华文中宋';
+            color: rgb(85 92 87);
+            z-index: 1000;
+        }
+
+        .explanation {
+            position: absolute;
+            top: 150px;
+            right: 20px;
+            font: 23px '方正姚体';
+            color: rgb(195 192 211);
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="e2" href="首页.html">
+        返回首页</a>
+
+    <a class="e1" href="艺术的意义.html">
+        返回上一页</a>
+    <div class="tital">
+        <p>
+            映<br />射<br />灵<br />魂
+        </p>
+    </div>
+    <div class="explanation">
+        <p>
+            ——艺术可以让灵魂成为可见的东西，<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;艺术家的灵魂在作品中闪闪发光
+        </p>
+    </div>
+    <div class="shell">
+        <label for="button1" class="button" style="--i:0">苏轼</label>
+        <input type="radio" id="button1" name="page" checked="">
+        <div class="page">
+            <div class="page_content">
+                <h1>苏轼</h1>
+                <p>自始至终的乐观主义</p>
+                <span>
+                    苏轼的艺术与他的灵魂有着密切的关系。苏轼是中国历史上著名的文学家、书法家和艺术评论家，他的作品以豪放、率真、敢言为特色，表现了他对自由、独立和真实的追求。他的作品中常常表现出对生活的感悟、对人性的理解、对社会的批判和对自我价值的追求，这些都与他的思想与灵魂密切相关。
+                    <br /> <br />代表作：《赤壁赋》、《水调歌头》、《东坡七集》、《东坡易传》、《东坡乐府》等
+                </span>
+            </div>
+        </div>
+
+
+        <label for="button2" class="button" style="--i:1">泰戈尔</label>
+        <input type="radio" id="button2" name="page">
+        <div class="page">
+            <div class="page_content">
+                <h1>泰戈尔</h1>
+                <p>印度现代文学的奠基人</p>
+                <span>泰戈尔的诗歌和文学作品中充满了对自然、爱情、宗教和人生的深刻思考，这种思想也反映在他的绘画和音乐作品中。他的艺术作品通常体现了对自由、内心情感和人性的探索，以及对世界和人类命运的关怀。
+                    <br /><br />代表作：《吉檀迦利》、《飞鸟集》、《眼中沙》、《四个人》、《家庭与世界》、《园丁集》、《新月集》、《最后的诗篇》、《戈拉》、《文明的危机》等
+                </span>
+            </div>
+        </div>
+
+
+        <label for="button3" class="button" style="--i:2">莫扎特</label>
+        <input type="radio" id="button3" name="page">
+        <div class="page">
+            <div class="page_content">
+                <h1>莫扎特</h1>
+                <p>天才与苦难成就了他</p>
+                <span>
+                    莫扎特的灵魂与艺术紧密相连，他的作品中常常流露出对生活的痛苦与挣扎，同时也充满了对爱情、友谊和自由的渴望。
+                    他的作品中传达出了他对父母、妻子和儿子的情感，以及他对宗教和哲学的思考。莫扎特的音乐作品是他情感的表达，同时也是他对生活和艺术的思考和追求。
+                    <br /><br />代表作：费加罗的婚礼、唐璜、魔笛、降E大调第三十九交响曲、g小调第四十交响曲等
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+</div>
+</div>
+</div>
+
+
+</body>
+
+</html>

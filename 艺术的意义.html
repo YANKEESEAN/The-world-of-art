@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .e2 {
+			background-color: #e3c0e7;
+			color: #000000;
+			padding: 10px;
+			text-decoration: none;
+			box-shadow: #878585 0px 0px 6px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font: 18px '华文中宋';
+            letter-spacing: 0px;
+            cursor: pointer;
+            border-radius: 5px;
+		}
+		.e2:active{
+			background-color: #bdbc9d;
+		}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-image: linear-gradient(-225deg, rgb(108, 175, 251) 0%, rgb(158, 204, 251) 29%, rgb(255, 214, 226)100%);
+        }
+        
+        .bubble {
+            width: 290px;
+            height: 290px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(244, 250, 158, 0.688);
+            font: 60px '楷体';
+            text-decoration: none;
+            position: absolute;
+            background: radial-gradient(circle at 75% 30%, white 5px, aqua 8%, darkblue 60%, aqua 100%);
+            box-shadow: inset 0 0 20px #fff, 
+            inset 10px 0 46px #eaf5fc, 
+            inset 100px 100px 900px #c2d8fe, 
+            inset -50px -100px 200px #fde9ea, 
+            inset 100px 10px 140px #fde9ea,
+            inset 0 0 90px #fff;
+        }
+        .bubble a {
+            text-decoration: none;
+            color: rgba(244, 250, 158, 0.688);
+        }
+
+        .a {
+            /*艺术的意义*/
+            position: absolute;
+            top: 0px;
+            left: 400px;
+            font: 120px '楷体';
+            color: rgba(153, 153, 250, 0.5);
+            text-shadow:
+                0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 30px #fff,
+                0 0 50px #fff,
+                0 0 80px #fff;
+            letter-spacing: 0px;
+            cursor: pointer;
+            /*光标移上去之后变成小手*/
+        }
+
+        .b:link {
+            color: rgba(244, 250, 158, 0.688);
+        }
+
+        .c {
+            /*提示*/
+            position: absolute;
+            bottom: 0;
+            left: 1200px;
+            font: 25px '华文仿宋';
+            color: rgba(98, 118, 231, 0.846);
+            letter-spacing: 0px;
+            cursor: pointer;
+            /*光标移上去之后变成小手*/
+
+        }
+
+        .d {
+            /*名言*/
+            position: absolute;
+            top: 200px;
+            left: 690px;
+            font: 20px '华文仿宋';
+            color: rgba(31, 53, 178, 0.604);
+            letter-spacing: 0px;
+
+        }
+        
+        .f {
+            /*提示*/
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+            font: 25px '华文仿宋';
+            color: rgba(98, 118, 231, 0.846);
+            letter-spacing: 0px;
+            cursor: pointer;
+            /*光标移上去之后变成小手*/
+
+        }
+
+    </style>
+    <style>
+        span1 {
+            user-select: none;
+            cursor: default;
+            font-size: 20px;
+            color: rgba(31, 53, 178, 0.604);
+            position: absolute;
+            transition: 1s;
+            font: 20px '华文仿宋';
+        }
+    </style>
+    </head>
+</head>
+
+<body>
+    <a class="e2"
+        href="首页.html">
+        返回首页</a>
+        
+    <a href="丰富生活.html"
+        class="bubble" style="left: 100px; top: 300px;">
+        丰富生活
+    </a>
+    
+    <a href="映射灵魂.html"
+        class="bubble" style="left: 400px; top: 300px;">
+        映射灵魂
+    </a>
+    
+    <a href="展现生命.html" 
+        class="bubble" style="left: 700px; top: 300px;">
+        展现生命
+    </a>
+    </div></div>
+    <div class="a">艺术的意义</div>
+    <div class="c">
+        <i>点击空白处有惊喜</i><br/>
+    </div>
+    <div class="f">
+        <i>点击泡泡进入页面</i><br />
+    </div>
+    <div class="d">
+        <p>
+            艺术的伟大意义，<br/>
+            基本上在于它能显示人的真正感情、内心生活的奥秘和热情的世界。—— 罗曼罗兰<br/>
+        </p>
+    </div>
+</body>
+
+<script>
+    var bubbles = document.querySelectorAll('.bubble');
+    var maxX = window.innerWidth - 290;
+    var maxY = window.innerHeight - 290;
+
+    bubbles.forEach((bubble, index) => {
+        bubble.speedX = Math.random() * 4 - 2;
+        bubble.speedY = Math.random() * 4 - 2;
+
+        function moveBubble() {
+            var rect = bubble.getBoundingClientRect();
+            if (rect.x <= 0 || rect.x >= maxX) {
+                bubble.speedX *= -1;
+            }
+            if (rect.y <= 0 || rect.y >= maxY) {
+                bubble.speedY *= -1;
+            }
+            bubble.style.left = rect.x + bubble.speedX + 'px';
+            bubble.style.top = rect.y + bubble.speedY + 'px';
+            requestAnimationFrame(moveBubble);
+        }
+        moveBubble();
+    });
+
+    function checkCollision(bubble1, bubble2) {
+        var rect1 = bubble1.getBoundingClientRect();
+        var rect2 = bubble2.getBoundingClientRect();
+        if (rect1.right >= rect2.left && rect1.left <= rect2.right && rect1.bottom >= rect2.top && rect1.top <= rect2.bottom) {
+            var tempX = bubble1.speedX;
+            var tempY = bubble1.speedY;
+            bubble1.speedX = bubble2.speedX;
+            bubble1.speedY = bubble2.speedY;
+            bubble2.speedX = tempX;
+            bubble2.speedY = tempY;
+        }
+    }
+
+    function moveAllBubbles() {
+        for (var i = 0; i < bubbles.length; i++) {
+            for (var j = i + 1; j < bubbles.length; j++) {
+                checkCollision(bubbles[i], bubbles[j]);
+            }
+        }
+        requestAnimationFrame(moveAllBubbles);
+    }
+    moveAllBubbles();
+</script>
+
+
+
+<script>
+    var arr = ["出特征的艺术才是唯一真实的艺术。 ——歌德",
+        "诗是由真实经过想象而出来的，不单是真实，亦不单是想象。 ——戴望舒",
+        "当艺术穿着破旧衣衫时，最容易让人认出它是艺术。 ——尼采",
+        "文学的真正的使命就是使感情成为可见的东西。 ——泰纳",
+        "艺术是人类的天性。——伯克",
+        "每当一位艺术家逝去，人类的一些幻想也随之而逝。——罗斯福",
+        "生活的奥秘存在于艺术之中。 ——王尔德",
+        "艺术是高尚情操的宣泄。 —— 穆尔",
+        "艺术给我们插上翅膀，把我们带到很远很远的地方。 ——契诃夫",
+        "艺术并不超越大自然，不过会使大自然更美化。 ——塞万提斯",
+        "艺术与科学既不同而又互相关联；它们在审美的方面交会。 ——克罗齐",
+        "艺术是活的科学。 —— 科克托",
+        "音乐是人生的艺术。 —— 施特劳斯",
+        "艺术是生活的镜子。 ——列夫．托尔斯泰",
+        "我们的艺术应当比现实站更高，应当使人不脱离现实又高于现实。 ——高尔基",
+        "艺术是一种使我们达到真实的假想。——毕加索",
+        "艺术应当担负起哺育思想的责任。 —— 白朗宁",
+        "艺术乃德行的宝库。——巴尔扎克"
+    ]
+    document.onclick = function (x) {
+        // 创建元素节点对象
+        var span1 = document.createElement("span1")
+        // 获取当前鼠标的坐标
+        span1.style.left = x.clientX + "px"
+        span1.style.top = x.clientY + "px"
+        // 让span的值为arr数组内随机的一个值
+        span1.innerHTML = arr[Math.floor(Math.random() * arr.length)]
+        // 设置span的动画效果
+        setTimeout(function () {
+            span1.style.opacity = "1"
+            span1.style.transform = "translateY(-100px)"
+        }, 100)
+        setTimeout(function () {
+            span1.style.opacity = "0"
+            span1.style.transform = "translateY(-230px)"
+        }, 1500)
+        // 清掉opacort为0的span
+        var chi = document.getElementsByClassName("span")
+        for (var i = 0; i < chi.length; i++) {
+            if (chi[i].style.opacity === "0") {
+                document.body.removeChild(chi[i])
+            }
+        }
+        // 将span添加到body里
+        document.body.appendChild(span1)
+    }
+
+</script>
+
+
+</html>

@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>艺术鉴赏</title>
+    <style>
+		
+        .e2 {
+			background-color: #a594e9;
+			color: #000000;
+			padding: 10px;
+            height: 20px;
+			text-decoration: none;
+			box-shadow: #666 0px 0px 6px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font: 18px '华文中宋';
+            letter-spacing: 0px;
+            cursor: pointer;
+		}
+		.e2:active{
+			background-color: #bdbc9d;
+		}
+        
+        /* 定义全局变量 */
+        :root {
+            --rotate-speed: 40;
+            --count: 8;
+            --easing: cubic-bezier(0.000, 0.37, 1.000, 0.63);
+        }
+
+        /* 设置页面样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(to top, #a18cd177 0%, #fbc2eb77 100%);
+        }
+
+        /* 设置容器样式 */
+        .void {
+            width: 100%;
+            max-width: 690px;
+            margin: auto;
+            position: absolute;
+            aspect-ratio: 1 / 1;
+        }
+
+        /* 鼠标悬停时暂停动画 */
+        ul:hover * {
+            animation-play-state: paused;
+        }
+
+        /* 设置列表样式 */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            z-index: 1;
+        }
+
+        /* 设置列表项样式 */
+        li {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            animation: rotateCW calc(var(--rotate-speed) * 1s) var(--easing) infinite;
+        }
+
+        /* 设置卡片样式 */
+        .card {
+            width: 30%;
+            height: 63px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 16px 24px;
+            gap: 8px;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 12px rgba(70, 0, 255, 0.1),
+                0px 16px 32px rgba(165, 135, 255, 0.1);
+            border-radius: 12px;
+            font: 400 14px '';
+            color: #535062;
+            animation: rotateCCW calc(var(--rotate-speed) * 1s) var(--easing) infinite;
+        }
+
+        /* 设置图片样式 */
+        .card img {
+            width: 100%;
+        }
+
+        /* 设置链接样式 */
+        a {
+            text-decoration: none;
+            color: unset;
+            display: block;
+            height: 80px;
+            overflow: hidden;
+        }
+
+        /* 设置模型名称样式 */
+        .model-name {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 150%;
+            color: #3B2ED0;
+            display: block;
+            letter-spacing: 3px;
+            color: #6844f7;
+        }
+
+        /* 设置SVG样式 */
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        /* 设置不同列表项的动画延迟 */
+        li:nth-child(2),
+        li:nth-child(2) .card {
+            animation-delay: calc((var(--rotate-speed)/var(--count)) * -1s);
+        }
+
+        li:nth-child(3),
+        li:nth-child(3) .card {
+            animation-delay: calc((var(--rotate-speed)/var(--count)) * -2s);
+        }
+
+        li:nth-child(4),
+        li:nth-child(4) .card {
+            animation-delay: calc((var(--rotate-speed)/var(--count)) * -3s);
+        }
+
+        li:nth-child(5),
+        li:nth-child(5) .card {
+            animation-delay: calc((var(--rotate-speed)/var(--count)) * -4s);
+        }
+
+        li:nth-child(6),
+        li:nth-child(6) .card {
+            animation-delay: calc((var(--rotate-speed)/var(--count)) * -5s);
+        }
+
+
+        /* 定义顺时针旋转动画 */
+        @keyframes rotateCW {
+            from {
+                transform: translate3d(0px, -50%, -1px) rotate(-45deg);
+            }
+
+            to {
+                transform: translate3d(0px, -50%, 0px) rotate(-315deg);
+            }
+        }
+
+        /* 定义逆时针旋转动画 */
+        @keyframes rotateCCW {
+            from {
+                transform: rotate(45deg);
+            }
+
+            to {
+                transform: rotate(315deg);
+            }
+        }
+
+        /* 设置中心圆样式 */
+        .center-circle {
+            position: absolute;
+            width: 150px;
+            aspect-ratio: 1 / 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #FFFFFF;
+            box-shadow: 0px 18px 36px -18px rgba(12, 5, 46, 0.3),
+                0px 30px 60px -12px rgba(12, 5, 46, 0.25);
+            border-radius: 50%;
+            background-size: cover;
+            background-position: -35px 0;
+        }
+
+        /* 设置第二个圆样式 */
+        .second-circle {
+            position: absolute;
+            width: 40%;
+            aspect-ratio: 1 / 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #F5F4FE;
+            opacity: 0.5;
+            box-shadow: 0px 18px 36px -18px rgba(12, 5, 46, 0.3),
+                0px 30px 60px -12px rgba(12, 5, 46, 0.25);
+            border-radius: 50%;
+            background-image: url(img/03.gif);
+        }
+
+        /* 设置最后一个圆样式 */
+        .last-circle {
+            position: absolute;
+            width: 66%;
+            aspect-ratio: 1 / 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #F5F4FE;
+            opacity: 0.25;
+            box-shadow: 0px 18px 36px -18px rgba(12, 5, 46, 0.3),
+                0px 30px 60px -12px rgba(12, 5, 46, 0.25);
+            border-radius: 50%;
+            background-image: url(img/03.gif);
+        }
+
+        /* 设置裁剪样式 */
+        .crop {
+            -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1));
+        }
+
+        /* 设置遮罩样式 */
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 50%;
+            background-position: 100% 50%;
+            background-repeat: no-repeat;
+            background-image: radial-gradient(100% 50% at 100% 50%,
+                    rgba(60, 26, 229, 0.25) 0%,
+                    rgba(59, 26, 229, 0.241896) 20%,
+                    rgba(53, 26, 229, 0.1872) 40%,
+                    rgba(41, 23, 240, 0.104) 60%,
+                    rgba(34, 26, 229, 0.0184296) 90%,
+                    rgba(32, 26, 229, 0) 100%);
+        }
+
+        /* 设置遮罩样式后的效果 */
+        .mask:after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            right: 0;
+            display: block;
+            background-image: linear-gradient(180deg, rgba(60, 26, 229, 0) 0%,
+                    #3C1AE5 50%, rgba(60, 26, 229, 0) 100%);
+        }
+
+        .a {
+            /*艺术鉴赏*/
+            position: absolute;
+            top: -50px;
+            left: 70px;
+            font: 60px '华文仿宋';
+            color: rgba(98, 118, 231, 0.846);
+            text-shadow:
+                0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 30px #fff,
+                0 0 50px #fff,
+                0 0 80px #fff;
+            letter-spacing: 0px;
+        }
+
+        .b {
+            /*提示*/
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font: 30px '华文仿宋';
+            color: rgba(98, 118, 231, 0.846);
+            letter-spacing: 0px;
+            cursor: pointer;
+            /*光标移上去之后变成小手.cc*/
+
+        }
+
+        .d {
+            /*提示*/
+            position: absolute;
+            top: 600px;
+            left: 1050px;
+            font: 20px '华文仿宋';
+            color: rgba(98, 118, 231, 0.846);
+            letter-spacing: 0px;
+        }
+
+        .c {
+            /*名言*/
+            position: absolute;
+            top: 160px;
+            left: 210px;
+            font: 23px '华文仿宋';
+            color: rgba(66, 74, 117, 0.846);
+            letter-spacing: 0px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="void" id="void">
+        <div class="crop">
+            <ul id="card-list" style="--count: 6;">
+                <li>
+                    <div class="card"><a href="https://www.metmuseum.org/" target="_blank">
+                            <span class="model-name">大都会艺术博物馆</span>
+                            <span>美国最大的艺术博物馆
+                            </span>
+                        </a></div>
+                </li>
+                <li>
+                    <div class="card"><a href="https://ltfc.net/home" target="_blank">
+                        <span class="model-name">中华珍宝馆</span>
+                        <span>专门分享中国书画的网站
+                        </span>
+                    </a></div>
+                </li>
+                <li>
+                    <div class="card"><a href="https://www.allhistory.com/painting" target="_blank">
+                            <span class="model-name">全画作</span>
+                            <span>
+                                古今中外画家作品集
+                            </span>
+                        </a></div>
+                </li>
+                <li>
+                    <div class="card"><a href="http://www.333cn.com/" target="_blank">
+                        <span class="model-name">中国设计之窗</span>
+                        <span>国内最具影响力的创意设计专业门户网站
+                        </span>
+                    </a></div>
+                </li>
+                <li>
+                    <div class="card"><a href="http://art.ifeng.com/" target="_blank">
+                        <span class="model-name">凤凰艺术</span>
+                        <span>最具影响力的全球艺术对话平台
+                        </span>
+                    </a></div>
+                </li>
+                <li>
+                    <div class="card"><a href="https://www.dpm.org.cn/Home.html/" target="_blank">
+                            <span class="model-name">故宫博物院</span>
+                            <span> 故宫博物院的相关艺术品欣赏
+                            </span>
+                        </a></div>
+                </li>
+                
+            </ul>
+            <div class="last-circle"></div>
+            <div class="second-circle"></div>
+        </div>
+        <div class="mask"></div>
+        <div class="center-circle"></div>
+    </div>
+    <div>
+        <div class="a">
+            <h1>艺<br />术<br />鉴<br />赏<br /></h1>
+        </div>
+        <div class="c">
+            <p>
+                艺术是高尚情操的宣泄。 —— 穆尔<br/>
+                <br/>
+                艺术给我们插上翅膀，<br/>把我们带到很远很远的地方。 ——契诃夫<br/>
+                <br/>
+                艺术的魔仗所触之处，<br/>当变为不朽的现实。——泰戈尔<br/>
+                <br/>
+                要想逃避这个世界，<br/>
+                没有比艺术更可靠的途径；
+                <br/>
+                要想同世界结合，<br/>
+                也没有比艺术更可靠的途径。——歌德<br/>
+            </p>
+        </div>
+        <div class="d">
+            <p>
+                <i>点击方框跳转到对应艺术鉴赏网站</i>
+        </div>
+    </div>
+    <a class="e2" href="首页.html">
+        返回首页</a>
+</body>
+
+</html>

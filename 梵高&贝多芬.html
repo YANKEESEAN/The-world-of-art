@@ -1,0 +1,379 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>梵高&贝多芬</title>
+    <style>
+        .e1 {
+            background-color: rgba(165, 148, 233, 0.429);
+            color: #000000;
+            padding: 10px;
+            height: 20px;
+            text-decoration: none;
+
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font: 18px '华文中宋';
+            letter-spacing: 0px;
+            cursor: pointer;
+            z-index: 5;
+        }
+
+        .e1:active {
+            background-color: #bdbc9d;
+        }
+
+        .e2 {
+            background-color: rgba(165, 148, 233, 0.429);
+            color: #000000;
+            padding: 10px;
+            height: 20px;
+            text-decoration: none;
+            position: absolute;
+            top: 0px;
+            left: 92px;
+            font: 18px '华文中宋';
+            letter-spacing: 0px;
+            cursor: pointer;
+            z-index: 5;
+        }
+
+        .e2:active {
+            background-color: #bdbc9d;
+        }
+
+        .e3 {
+            background-color: rgba(165, 148, 233, 0.429);
+            color: #000000;
+            padding: 10px;
+            height: 20px;
+            text-decoration: none;
+
+            position: absolute;
+            top: 0px;
+            left: 148px;
+            font: 18px '华文中宋';
+            letter-spacing: 0px;
+            cursor: pointer;
+            z-index: 5;
+        }
+
+        .e3:active {
+            background-color: #bdbc9d;
+        }
+
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .shell {
+            height: 100vh;
+            overflow-x: hidden;
+            perspective: 3px;
+        }
+
+        .shell div {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: 30px;
+            letter-spacing: 2px;
+        }
+
+        .image {
+            transform: translateZ(-1px) scale(1.6);
+            background-size: cover;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        .image1 {
+            transform: translateZ(-1px) scale(2);
+            background-size: cover;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        .texta {
+            /*标题*/
+            height: 40vh;
+            background-color: rgb(225, 225, 218);
+            font-family: "方正姚体";
+            padding: 10px;
+            letter-spacing: 10px;
+            font-size: 27px;
+            color: rgb(87, 98, 16)
+        }
+
+        .text0 {
+            /*梵高生平*/
+            height: 50vh;
+            background-color: rgb(21, 107, 16);
+            font-family: "华文中宋";
+            padding: 10px;
+            font-size: 20px;
+            color: rgb(220, 235, 255)
+        }
+
+        .text1 {
+            /*鸢尾花*/
+            height: 50vh;
+            background-color: rgb(5, 58, 148);
+            font-family: "华文中宋";
+            padding: 10px;
+            font-size: 20px;
+            color: rgb(146, 185, 239)
+        }
+
+        .text2 {
+            /*星夜*/
+            height: 50vh;
+            background-color: rgb(34 68 124);
+            font-family: "华文中宋";
+            padding: 10px;
+            font-size: 25px;
+            color: rgb(173, 218, 138)
+        }
+
+        .text3 {
+            /*杏树*/
+            height: 50vh;
+            background-color: rgb(56, 108, 167);
+            font-family: "华文中宋";
+            padding: 10px;
+            font-size: 30px;
+            color: rgb(200, 185, 140)
+        }
+
+        .text4 {
+            /*露天咖啡座*/
+            height: 50vh;
+            background-color: rgb(143, 121, 12);
+            font-family: "华文中宋";
+            padding: 10px;
+            font-size: 40px;
+            color: rgb(39, 5, 91)
+        }
+
+        .text5 {
+            /*桑树*/
+            height: 50vh;
+            background-color: rgb(56, 46, 171);
+            font-family: "华文中宋";
+            padding: 10px;
+            font-size: 45px;
+            color: rgb(255, 208, 0)
+        }
+
+        .text6 {
+            /*贝多芬*/
+            height: 50vh;
+            background-color: rgb(172 146 42);
+            font-family: "华文中宋";
+            padding: 10px;
+            font-size: 40px;
+            color: rgb(204, 26, 26)
+        }
+
+        .heading0 {
+            /*展现生命*/
+            z-index: -1;
+            transform: translateY(-60vh) translateZ(1px);
+            color: rgb(152, 131, 73);
+            text-shadow: 0 0 10px  rgb(234, 218, 174),
+                0 0 20px #fff,
+                0 0 30px #fff,
+                0 0 50px #fff,
+                0 0 80px #fff;
+            font-family: "华文新魏";
+            font-size: 100px;
+        }
+
+        .heading {
+            /*鸢尾花*/
+            z-index: -1;
+            transform: translateY(-30vh) translateZ(1px);
+            color: #6304d7;
+            font-family: "华文中宋";
+            font-size: 25px;
+        }
+
+        .heading7 {
+            /*梵高*/
+            z-index: -1;
+            transform: translateY(-30vh) translateZ(1px);
+            color: #dfeee0;
+            font-family: "华文中宋";
+            font-size: 15px;
+        }
+
+        .heading1 {
+            z-index: -1;
+            transform: translateY(-30vh) translateZ(1px);
+            color: rgb(27, 27, 25);
+            font-family: "华文中宋";
+            font-size: 25px;
+        }
+
+        .heading2 {
+            z-index: -1;
+            transform: translateY(-30vh) translateZ(1px);
+            color: #083a8b;
+            font-family: "华文中宋";
+            font-size: 23px;
+        }
+
+        .heading3 {
+            z-index: -1;
+            transform: translateY(-30vh) translateZ(1px);
+            color: rgb(195 188 63);
+            font-family: "华文中宋";
+            font-size: 25px;
+        }
+
+        .heading4 {
+            z-index: -1;
+            transform: translateY(-30vh) translateZ(1px);
+            color: rgb(244, 244, 239);
+            font-family: "华文中宋";
+            font-size: 30px;
+        }
+
+        .heading5 {
+            z-index: -1;
+            transform: translateY(-30vh) translateZ(1px);
+            color: rgb(244, 244, 239);
+            font-family: "华文中宋";
+            font-size: 18px;
+        }
+
+        .heading6 {
+            z-index: -1;
+            transform: translateY(-30vh) translateZ(1px);
+            color: rgb(193, 104, 21);
+            font-family: "华文中宋";
+            font-size: 20px;
+        }
+
+        #audioPlayer {
+            position: fixed;
+            top: 0;
+            right: 0px;
+            transform: translateX(-50%);
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<body>
+    <a class="e1" href="首页.html">
+        返回首页
+    </a>
+    <a class="e2" href="#梵高">
+        梵高
+    </a>
+    <a class="e3" href="#贝多芬">
+        贝多芬
+    </a>
+    <div class="shell">
+        <div id="audioPlayer">
+            <audio controls>
+                <source src="music/Ludwig van Beethoven - 悲怆奏鸣曲.mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <div class="image1 " style="background-image: url( 'img/背景.jpg'); "></div>
+        <div class="heading0 ">
+            <h1>展现生命</h1>
+        </div>
+        <div class="texta ">
+            <h2>艺术是展现生命的一种方式<br/>
+                看着那些色彩的交融，听着那些音符的跳动<br/>
+                艺术家的一生<br/>
+                就这样，缓缓展现在我们眼前
+            </h2>
+        </div>
+        <a href="#" name="梵高">
+            <div class="image " style="background-image: url( 'img/自画像.jpg'); "></div>
+        </a>
+        <div class="heading7 ">
+            <h1><i>文森特·威廉·梵高Vincent Willem van Gogh</i></h1>
+        </div>
+        <div class="text0 ">
+            <h2>文森特·威廉·梵高，荷兰后印象派画家。早期画风写实，受到荷兰传统绘画及法国写实主义画派的影响。1886年，受印象派和新印象派以及日本浮世绘的作品的影响，画风巨变。后来，梵高环上疯病并时常发作，但神志清醒时他仍然坚持作画。1889年创作《星月夜》。1890年7月，梵高在精神错乱中开枪自杀，年仅37岁。他的作品展现了他波澜壮阔的一生。（下滑欣赏梵高作品）
+            </h2>
+        </div>
+
+        <div class="image" style="background-image: url('img/鸢尾花.jpg'); "></div>
+        <div class="heading ">
+            <h1>《鸢尾花》</h1>
+        </div>
+        <div class="text1 ">
+            <h2>梵高在进入精神病院的一个月内开始绘制《鸢尾花》，并在医院花园进行绘制中工作。但《鸢尾花》充满了柔和和轻盈，以及充满生机，没有悲剧的感觉。</h2>
+        </div>
+
+        <div class="image " style="background-image: url( 'img/星夜.jpg'); "></div>
+        <div class="heading1 ">
+            <h1>《星夜》</h1>
+        </div>
+        <div class="text2 ">
+            <h3>描绘了在法国普罗旺斯地区圣雷米的一家精神病院朝东的窗户所看到的夜晚景色，此外还包括了一个想像中的村庄。作品充满忧郁精神和悲剧性幻觉
+            </h3>
+        </div>
+
+        <div class="image " style="background-image: url( 'img/盛开的杏花.jpg'); "></div>
+        <div class="heading2 ">
+            <h1>《盛开的杏花》</h1>
+        </div>
+        <div class="text3 ">
+            <h4>对于梵高来说，开花的树具有特殊的意义，它们代表着觉醒和希望。他喜欢这些开花的树，并且在绘制它们的过程中找到乐趣。《盛开的杏花》是作为他新出生的侄子的贺礼。</h4>
+        </div>
+
+        <div class="image " style="background-image: url( 'img/夜晚露天咖啡座.jpg'); "></div>
+        <div class="heading3 ">
+            <h1>《夜晚露天咖啡座》</h1>
+        </div>
+        <div class="text4 ">
+            <h5>作品具有梵高独特的暖色调及透视法。梵高对此的评价“这并不阻止我对宗教有一种强烈的需求，所以我晚上会出去画星星，我总是梦想著画一幅画，上面有一群生动的朋友。”</h5>
+        </div>
+
+        <div class="image " style="background-image: url( 'img/桑树.jpg'); "></div>
+        <div class="heading4 ">
+            <h1>《桑树》</h1>
+        </div>
+        <div class="text5 ">
+            <h6>展示了疗养院花园里的一棵树。是梵高于1889年10月创作的一幅油画，距离他去世不到一年。这幅画是在他的人生中经历了高低起伏，既有自我意识的觉醒，也有混乱不安的时期创作的。</h6>
+        </div>
+        <a href="#" name="贝多芬">
+            <div class="image " style="background-image: url( 'img/贝多芬.png'); "></div>
+        </a>
+
+        <div class="heading5 ">
+            <h1><i>路德维希·凡·贝多芬Ludwig van Beethoven</i>
+            </h1>
+        </div>
+        <div class="text6 ">
+            <h6>路德维希·凡·贝多芬 ，维也纳古典乐派代表人物之一，欧洲古典主义时期作曲家。
+                贝多芬的一生经历了许多挫折和苦难，他从小就面临着家庭贫困和父亲的严厉教育。在他青年时期，他遭遇了耳聋的困扰。耳聋使他逐渐失去了听觉感知，但这并没有阻止他创作音乐。相反，残缺的身体状况激发了他更加强烈的创作欲望和对音乐的热爱。他的音乐作品充满了激情和力量，具有强烈的个人表达和情感共鸣，作品中融入了对自然、人类和社会的思考，反映了他对生活的热爱和对人类命运的关注。他的一生在作品中可见一斑。
+                (网页背景音乐为贝多芬的命运交响曲)</h6>
+        </div>
+        <div class="image " style="background-image: url( 'img/印象派.jpg'); "></div>
+        <div class="heading6 ">
+            <a href="首页.html" style="text-decoration:none;">返回上页
+            </a>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
